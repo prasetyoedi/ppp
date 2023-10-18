@@ -19,8 +19,6 @@ function shuffer() {
             .then(handlePagination)
     }
 
-// main product
-
 function renderItem(items) {
         var listProduct = document.getElementById('list-product');
         var htmls = items.map(function (item) {
@@ -115,7 +113,7 @@ function handlePagination() {
         checkPageArrow();
         for (var i = 0; i < paginationLength; i++) {
             if (i != 0 && i != 4 && i != paginationLength - 1) {
-                // handle active button
+
                 var isActive = document.querySelector('.pagination-item--active a');
                 if (isActive.attributes.href) {
                     isActive.attributes.removeNamedItem('href');
@@ -124,7 +122,6 @@ function handlePagination() {
                     var paginationItemLink = document.querySelectorAll('.pagination-item-link');
                     paginationItemLink[i].setAttribute('href', '#');
                 }
-                // handle other button
                 paginationItem[1].onclick = function () {
                     var content = this.querySelector('a').textContent;
                     var paginationItemLink = document.querySelectorAll('.pagination-item-link');
@@ -185,7 +182,7 @@ function handlePagination() {
             }
             else if (i == 0 || i == paginationLength - 1) {
                 var paginationItemLink = document.querySelectorAll('.pagination-item-link');
-                // arrow left
+            
                 paginationItem[0].onclick = function () {
                     if (document.querySelector('.pagination-item--active a').textContent == 8) {
                         document.querySelector('.pagination-item--active').classList.remove('pagination-item--active');
@@ -203,7 +200,7 @@ function handlePagination() {
                     }
                     checkPageArrow();
                 }
-                // arrow right
+                
                 paginationItem[paginationLength - 1].onclick = function () {
                     if (document.querySelector('.pagination-item--active a').textContent == 7) {
                         document.querySelector('.pagination-item--active').classList.remove('pagination-item--active');
@@ -224,8 +221,6 @@ function handlePagination() {
             }
         }
     }
-
-// catagory
 
 var headerCatagoryItem = document.querySelectorAll('.header__sort-item');
 
